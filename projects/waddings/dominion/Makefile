@@ -18,13 +18,112 @@ badTestDrawCard: badTestDrawCard.c dominion.o rngs.o
 testBuyCard: testDrawCard.c dominion.o rngs.o
 	gcc -o testDrawCard -g  testDrawCard.c dominion.o rngs.o $(CFLAGS)
 
+cardtest1: cardtest1.c dominion.o rngs.o
+	gcc -o cardtest1 -g cardtest1.c dominion.o rngs.o $(CFLAGS)
+
+runcardtest1: cardtest1
+	cardtest1 &> cardtest1result.out
+	gcov cardtest1.c >> cardtest1result.out
+	cat cardtest1.c.gcov >> cardtest1result.out
+
+cardtest2: cardtest2.c dominion.o rngs.o
+	gcc -o cardtest2 -g cardtest2.c dominion.o rngs.o $(CFLAGS)
+
+runcardtest2: cardtest2
+	cardtest2 &> cardtest2result.out
+	gcov cardtest2.c >> cardtest2result.out
+	cat cardtest2.c.gcov >> cardtest2result.out
+
+cardtest3: cardtest3.c dominion.o rngs.o
+	gcc -o cardtest3 -g cardtest3.c dominion.o rngs.o $(CFLAGS)
+
+runcardtest3: cardtest3
+	cardtest3 &> cardtest3result.out
+	gcov cardtest3.c >> cardtest3result.out
+	cat cardtest3.c.gcov >> cardtest3result.out
+
+cardtest4: cardtest4.c dominion.o rngs.o
+	gcc -o cardtest4 -g cardtest4.c dominion.o rngs.o $(CFLAGS)
+
+runcardtest4: cardtest4
+	cardtest4 &> cardtest4result.out
+	gcov cardtest4.c >> cardtest4result.out
+	cat cardtest4.c.gcov >> cardtest4result.out
+
+unittest1: unittest1.c dominion.o rngs.o
+	gcc -o unittest1 -g unittest1.c dominion.o rngs.o $(CFLAGS)
+
+rununittest1: unittest1
+	unittest1 &> unittest1result.out
+	gcov unittest1.c >> unittest1result.out
+	cat unittest1.c.gcov >> unittest1result.out
+
+unittest2: unittest2.c dominion.o rngs.o
+	gcc -o unittest2 -g unittest2.c dominion.o rngs.o $(CFLAGS)
+
+rununittest2: unittest2
+	unittest2 &> unittest2result.out
+	gcov unittest2.c >> unittest2result.out
+	cat unittest2.c.gcov >> unittest2result.out
+
+unittest3: unittest3.c dominion.o rngs.o
+	gcc -o unittest3 -g unittest3.c dominion.o rngs.o $(CFLAGS)
+
+rununittest3: unittest3
+	unittest3 &> unittest3result.out
+	gcov unittest3.c >> unittest3result.out
+	cat unittest3.c.gcov >> unittest3result.out
+
+unittest4: unittest4.c dominion.o rngs.o
+	gcc -o unittest4 -g unittest4.c dominion.o rngs.o $(CFLAGS)
+
+rununittest4: unittest4
+	unittest4 &> unittest4result.out
+	gcov unittest4.c >> unittest4result.out
+	cat unittest4.c.gcov >> unittest4result.out
+
+unittestresults.out: cardtest1.c cardtest2.c cardtest3.c cardtest4.c unittest1.c unittest2.c unittest3.c unittest4.c dominion.o rngs.o
+	gcc -o cardtest1 -g cardtest1.c dominion.o rngs.o $(CFLAGS)
+	gcc -o cardtest2 -g cardtest2.c dominion.o rngs.o $(CFLAGS)
+	gcc -o cardtest3 -g cardtest3.c dominion.o rngs.o $(CFLAGS)
+	gcc -o cardtest4 -g cardtest4.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest1 -g unittest1.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest2 -g unittest2.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest3 -g unittest3.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest4 -g unittest4.c dominion.o rngs.o $(CFLAGS)
+	cardtest1 &> unittestresults.out
+	gcov cardtest1.c >> unittestresults.out
+	cat cardtest1.c.gcov >> unittestresults.out
+	cardtest2 &>> unittestresults.out
+	gcov cardtest2.c >> unittestresults.out
+	cat cardtest2.c.gcov >> unittestresults.out
+	cardtest3 &>> unittestresults.out
+	gcov cardtest3.c >> unittestresults.out
+	cat cardtest3.c.gcov >> unittestresults.out
+	cardtest4 &>> unittestresults.out
+	gcov cardtest4.c >> unittestresults.out
+	cat cardtest4.c.gcov >> unittestresults.out
+	unittest1 &>> unittestresults.out
+	gcov unittest1.c >> unittestresults.out
+	cat unittest1.c.gcov >> unittestresults.out
+	unittest2 &>> unittestresults.out
+	gcov unittest2.c >> unittestresults.out
+	cat unittest2.c.gcov >> unittestresults.out
+	unittest3 &>> unittestresults.out
+	gcov unittest3.c >> unittestresults.out
+	cat unittest3.c.gcov >> unittestresults.out
+	unittest4 &>> unittestresults.out
+	gcov unittest4.c >> unittestresults.out
+	cat unittest4.c.gcov >> unittestresults.out
+
+
 testAll: dominion.o testSuite.c
 	gcc -o testSuite testSuite.c -g  dominion.o rngs.o $(CFLAGS)
 
 interface.o: interface.h interface.c
 	gcc -c interface.c -g  $(CFLAGS)
 
-runtests: testDrawCard 
+runtests: testDrawCard
 	./testDrawCard &> unittestresult.out
 	gcov dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
