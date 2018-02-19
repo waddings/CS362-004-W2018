@@ -62,7 +62,7 @@ int checkSmithy(int p, struct gameState *post, int *numfails, int n) {
     (*numfails)++;
     printf("FAILURE AT ITERATION %d\n", n);
   }
-  if(pos->deckCount[p] != pre.deckCount[p] - 3){
+  if(post->deckCount[p] != pre.deckCount[p] - 3){
     (*numfails)++;
     printf("FAILURE AT ITERATION %d\n", n);
   }
