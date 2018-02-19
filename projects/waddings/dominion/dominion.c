@@ -650,9 +650,9 @@ void adventurerCard(int *drawntreasure, int *currentPlayer, int *cardDrawn, int 
     }
     drawCard(*currentPlayer, state);
     *cardDrawn = state->hand[*currentPlayer][state->handCount[*currentPlayer]-1];//top card of hand is most recently drawn card.
-    if (*cardDrawn == copper || *cardDrawn == silver || *cardDrawn == gold)
+    if (*cardDrawn == copper || *cardDrawn == silver || *cardDrawn == gold){
     (*drawntreasure)++;
-    else{
+  }else{
       temphand[*z]=*cardDrawn;
       state->handCount[*currentPlayer]--; //this should just remove the top card (the most recently drawn one).
       z++;
@@ -1248,7 +1248,6 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 
 int discardCard(int handPos, int currentPlayer, struct gameState *state, int trashFlag)
 {
-
   //if card is not trashed, added to Played pile
   if (trashFlag < 1)
     {
