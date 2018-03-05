@@ -1,0 +1,9 @@
+unittest1: unittest1.c:43: main: Assertion `numHandCards(&testG) == numHandCards(&G) + newCards - discarded' failed.
+------------------Beginning Unit Test for: numHandCards()---------------------
+Player's hand count: 5, expected count: 5
+Test Passed
+(Compared to G.handCount) Player's hand count: 5, expected count: 5
+Test Passed
+Other player's hand count: 0, expected count: 0
+Test Passed
+Player's hand count: 6, expected count: 7

@@ -1,0 +1,7 @@
+cardtest2: cardtest2.c:38: main: Assertion `testG.handCount[thisPlayer] == G.handCount[thisPlayer] + newCards - discarded' failed.
+------------------Beginning Test for Card2: Adventurer---------------------
+2nd to last card in player's hand: 4, expected: 4-6
+Test Passed
+Last card in player's hand: 4, expected: 4-6
+Test Passed
+Player's hand count: 6, expected count: 7

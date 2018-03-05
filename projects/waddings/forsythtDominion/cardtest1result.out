@@ -1,0 +1,3 @@
+cardtest1: cardtest1.c:30: main: Assertion `testG.handCount[thisPlayer] == G.handCount[thisPlayer] + newCards - discarded' failed.
+------------------Beginning Test for Card1: Smithy---------------------
+Player's hand count: 6, expected count: 7

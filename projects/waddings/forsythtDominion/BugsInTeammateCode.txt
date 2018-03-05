@@ -1,0 +1,170 @@
+Noverse Bug Reporting Template
+==============================
+
+Title: Bug1: Smithy not drawing enough cards
+
+Class: Serious Bug
+
+Date:           3/4/2018
+Reported By:    Scott Waddington
+Email:          waddings@oregonstate.edu
+
+
+Product:     dominion.c                   Version:     assignment-2
+Platform:    Linux                        Version:     unknown
+Browser:     N/A                          Version:     N/A
+URL:         N/A
+
+Is it reproducible: Yes
+
+Description
+===========
+The function "SmithyEffect," which controls the functionality of the smithy card in dominion.c, appears to be drawing only two Cards
+rather than the three cards that it should be drawing.
+
+
+Steps to Produce/Reproduce
+--------------------------
+Simply playing the smithy card in the dominion game will reproduce this functionality
+
+
+Expected Results
+----------------
+The wiki description of the smithy card indicated that it should draw three cards from the player's deck and then discard a card so the player's
+hand should increase by 2 cards at the end of the turn
+
+
+Actual Results
+--------------
+Currently, smithy is drawing only 2 cards and discarding 1.
+
+
+Workarounds
+-----------
+I have not found any workarounds that don't involve changing the actual code.
+
+
+Attachments
+-----------
+N/A
+
+
+Other Information
+-----------------
+None
+
+
+----------------------------------------------------------END OF BUG 1----------------------------------------------------------
+
+Title: Bug2: cardEffect not returning correctly
+
+Class: Serious Bug
+
+Date:           3/4/2018
+Reported By:    Scott Waddington
+Email:          waddings@oregonstate.edu
+
+
+Product:     dominion.c                   Version:     assignment-2
+Platform:    Linux                        Version:     unknown
+Browser:     N/A                          Version:     N/A
+URL:         N/A
+
+Is it reproducible: Yes
+
+Description
+===========
+The function "cardEffect," which controls the effect of played cards in dominion, doesn't return with the correct integer value from certain
+cards.
+
+
+Steps to Produce/Reproduce
+--------------------------
+Playing any of the following cards in dominion will cause this bug:
+-smithy
+-adventurer
+-sea_hag
+-Village
+-tribute
+
+
+Expected Results
+----------------
+Once cardEffect finishes it should return an integer value indicating its return status. For example, a successful return
+should be indicated by a return value of 0. However, for the cards described above, the return value is never set.
+
+
+Actual Results
+--------------
+The return value is never set when one of those cards is played.
+
+
+Workarounds
+-----------
+Currently, it does not appear to necessarily break the game, however in the future, if the game is changed and some
+function relies on a certain return value from cardEffect, this could cause major problems.
+
+
+Attachments
+-----------
+N/A
+
+
+Other Information
+-----------------
+None
+
+----------------------------------------------------------END OF BUG 2----------------------------------------------------------
+
+Title: Bug3: adventurerEffect drawing less than 2 treasure cards
+
+Class: Serious Bug
+
+Date:           3/4/2018
+Reported By:    Scott Waddington
+Email:          waddings@oregonstate.edu
+
+
+Product:     dominion.c                   Version:     assignment-2
+Platform:    Linux                        Version:     unknown
+Browser:     N/A                          Version:     N/A
+URL:         N/A
+
+Is it reproducible: Yes
+
+Description
+===========
+The function "adventurerEffect," which plays the adventurer card from dominion, only draws a single treasure card from the
+player's hand.
+
+
+Steps to Produce/Reproduce
+--------------------------
+Running dominion.c and playing the adventurer card will replicate this bug every time.
+
+
+Expected Results
+----------------
+When adventurer is played, it should draw two treasure cards from the player's hand.
+
+
+Actual Results
+--------------
+Rather than drawing two treasure cards, only 1 treasure card is drawn.
+
+
+Workarounds
+-----------
+I have found no workarounds without actually modifying the adventurerEffect function.
+
+
+Attachments
+-----------
+N/A
+
+
+Other Information
+-----------------
+None
+
+----------------------------------------------------------END OF REPORT----------------------------------------------------------
