@@ -15,6 +15,8 @@
  * limitations under the License.
  */
 
+import java.util.Random;
+
 import junit.framework.TestCase;
 
 /**
@@ -81,7 +83,7 @@ protected void setUp() {
     * @param testObjects Used to create a url.
     */
    public void testIsValid(Object[] testObjects, long allowAllSchemes) {
-	      UrlValidator urlVal = new UrlValidator(null, null, allowAllSchemes);
+	  UrlValidator urlVal = new UrlValidator(null, null, allowAllSchemes);
 	      //UrlValidator urlVal = new UrlValidator(null, allowAllSchemes);
       assertTrue(urlVal.isValid("http://www.google.com"));
       assertTrue(urlVal.isValid("http://www.google.com/"));
@@ -124,6 +126,7 @@ protected void setUp() {
       if (printStatus) {
          System.out.println();
       }
+
    }
 
    public void testValidator202() {
